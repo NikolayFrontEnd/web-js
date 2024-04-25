@@ -1,0 +1,1025 @@
+/* 
+
+ЭТО ПЕРЕКЛЮЧЕНИЯ DASHBORAD
+
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+
+:root
+{
+  --clr: #a12db5;
+}
+
+
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #222;
+}
+
+
+
+.container{
+position: relative;
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+width: 600px;
+height: 400px;
+}
+
+
+
+.tabs{
+  position: relative;
+  width: 80px;
+  padding: 40px 0;
+}
+
+
+
+.tabs input{
+appearance: none;
+display: none;
+}
+
+
+
+.tabs .icon{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.tabs .icon label {
+  width: 80px;
+  height:80px;
+  text-align:center;
+  line-height: 90px;
+  font-size: 2em;
+  color: rgb(255, 255, 255);
+  opacity: 0.25;
+  transition: 0.5s;
+  cursor: pointer;
+z-index: 2;
+}
+
+
+
+.tabs input:nth-child(1):checked ~ .icon label:nth-child(1),
+.tabs input:nth-child(2):checked ~ .icon label:nth-child(2),
+.tabs input:nth-child(3):checked ~ .icon label:nth-child(3),
+.tabs input:nth-child(4):checked ~ .icon label:nth-child(4)
+{
+opacity: 1;
+}
+.indicator{
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: var(--clr);
+  z-index: 1;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  transition: 0.5s;
+}
+.indicator::before
+{
+  content: '';
+  position: absolute;
+  top: -20px;
+  right:0;
+  width:20px;
+  height: 20px;
+  background: transparent;
+  border-bottom-right-radius:20px;
+  box-shadow: 8px, 8px, 0, 8px, var(--clr);
+  }
+.indicator::after{
+content: '';
+position: absolute;
+bottom: -20px;
+right:0;
+width:30px;
+height: 30px;
+background:transparent;
+border-top-right-radius:20px;
+box-shadow: 8px, -8px, 0, 8px, var(--clr);
+} 
+
+.tabs input:nth-child(1):checked ~ .icon .indicator{
+  top:0;
+}
+
+.tabs input:nth-child(2):checked ~ .icon .indicator{
+  top:25%;
+}
+.tabs input:nth-child(3):checked ~ .icon .indicator{
+  top:50%;
+}
+.tabs input:nth-child(4):checked ~ .icon .indicator{
+  top:75%;
+}
+
+.content{
+  position: absolute;
+  top: 0;
+  left: 80px;
+  width: 520px;
+  height: 400px;
+  background: var(--clr);
+} */
+
+
+/* ПЕРЕКЛЮЧАТЕЛЬ КНОПКА
+body{
+  margin: 40px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100hv;
+
+}
+.n
+{
+-webkit-appearance: none;
+visibility: hidden;
+display: none;
+}
+.check{
+  position: relative;
+  display: block;
+  width:40px;
+  height:20px;
+  background: #093c3e;
+  cursor: pointer;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: ease-in 0.5s;
+}
+.n:checked ~ .check{
+background: #fff;
+box-shadow: 0 0 0 1200px #093c3e;
+}
+ .check:before{
+content: '';
+position: absolute;
+top:2px;
+left: 2px;
+background: #fff;
+width:16px;
+height: 16px;
+border-radius: 50%;
+transition: 0.5s;
+
+}
+.n:checked ~ .check:before{
+  transform: translateX(-50px);
+}  
+
+  
+ .check:after{
+  content: '';
+  position: absolute;
+  top:2px;
+  right: 2px;
+  background: #093c3e ;
+  width:16px;
+  height: 16px;
+  border-radius: 50%;
+  transition: 0.5s;
+  transform: translateX(50px);
+  }
+  .n:checked ~ .check:after{
+    transform: translateX(0px);
+  }  */
+
+/* ОТНОСИТЕЛЬНОЕ И АБСОЛЮТНОЕ ПОЗИЦИОНИРОВААНИЕ ОБЪЯСНЕНИЕ
+
+.parent {
+    background: aquamarine;
+    height: 75vh;
+    width: 75vw;
+    padding: 1em;
+position: relative;
+  }
+  
+  .child {
+    background: red;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+top: 0;
+left: 0;
+  } */
+
+
+/*   nav {
+    width: 100%;
+    height: 5em;
+    background-color: rgb(37, 39, 53);
+    display: flex;
+    justify-content: flex-start;
+    padding: 1em;
+}
+
+.burger-menu {
+    height: 100%;
+    width: 4em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.burger-bar {
+    width: 4em;
+    height: 0.5em;
+    background-color: rgb(0, 183, 255);
+    border-radius: 0.5em;
+}
+
+.menu {
+    width: 50%;
+    height: 100vh;
+    background-color: rgb(154, 181,240);
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: inherit;
+}
+
+
+
+.burger-bar.clicked:nth-child(1){
+    transform: rotate(45deg) translate(0.75em, 1.25em);
+    transition: ease-out 0.5s;
+}
+
+.burger-bar.clicked:nth-child(2){
+    transform: scale(0.1);
+    transition: ease-out 0.5s;
+}
+
+.burger-bar.clicked:nth-child(3){
+    transform: rotate(135deg) translate(-0.5em, 1em);
+    transition: ease-out 0.5s;
+}
+
+
+.burger-bar.unclicked {
+    transform: rotate(0) translate(0);
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+} */
+/* .Header{
+  display: flex;
+  background-color: black;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
+} */
+/* .DashBoard{
+    width: 35%;
+    height: 100vh;
+    background-color: rgb(58, 58, 58);
+    top: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+.hidden{
+  display: none;
+  transition: 0.5s;
+} */
+
+
+
+
+/* КНОПКА БУРГЕР И ВЫЕЗЖАЮЩЕЕ МЕНЮ 
+
+.DashBoard {
+  width: 35%;
+  height: 100vh;
+  background-color: rgb(58, 58, 58);
+  top: 0;
+  z-index: -1;
+  transition: opacity 0.5s, transform 0.5s;
+  opacity: 0; 
+  transform: translateX(-100%); 
+}
+
+.DashBoard.show {
+  opacity: 1;
+  transform: translateX(0%); 
+}
+.burger {
+  width: 60px;
+  height: 60px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.burger > i {
+  background: rgb(255, 255, 255);
+  width: 40px;
+  height: 2px;
+  display: block;
+  position: absolute;
+  transition: 0.5s;
+}
+
+.burger > i:nth-child(1) {
+  transform: translateY(-15px);
+  animation: itop_out 0.5s ease forwards;
+}
+
+.burger > i:nth-child(3) {
+  transform: translateY(15px);
+  animation: ibottom_out 0.5s ease forwards;
+}
+
+.burger.active > i:nth-child(1) {
+  animation: itop 0.5s ease forwards;
+}
+
+.burger.active > i:nth-child(2) {
+  width: 0px;
+}
+
+.burger.active > i:nth-child(3) {
+  animation: ibottom 0.5s ease forwards;
+}
+
+@keyframes itop {
+  0% {transform: translateY(-15px)}
+  50% {transform: translateY(-20px)}
+  100% {transform: translateY(0px) rotate(45deg)}
+}
+
+@keyframes ibottom {
+  0% {transform: translateY(15px)}
+  50% {transform: translateY(20px)}
+  100% {transform: translateY(0px) rotate(135deg)}
+}
+
+@keyframes itop_out {
+  0% {transform: translateY(0px)}
+  50% {transform: translateY(-18px)}
+  100% {transform: translateY(-15px)}
+}
+
+@keyframes ibottom_out {
+  0% {transform: translateY(0px)}
+  50% {transform: translateY(18px)}
+  100% {transform: translateY(15px)}
+} */
+
+
+
+/*    3D КАРТОЧКИ
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+background: black;
+} */
+/* .container{
+  position: relative;
+  display:flex;
+  justify-content: center;
+  text-align: center;
+  gap:80px;
+flex-wrap:wrap;
+}
+
+.container .card{
+  position: relative;
+  width: 300px;
+  height:400px;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.container .card .imgBx,
+.container .card .textBx{
+position:relative;
+width:100%;;
+display: flex;
+justify-content: center;
+align-items: center;
+transition: 0.5s;
+}
+
+.container .card .imgBx{
+  background: #fff;
+  height: 120px;
+  z-index:1;
+  transform-origin: bottom;
+}
+
+.container .card:hover .imgBx{
+  transform: translateY(-100%) rotateX(90deg);
+}
+
+.container .card .textBx{
+  height: 280px;
+  background: var(--clr);
+  border-top:8px solid #333;
+  transform-origin: top;
+  transition-delay: 0.5s;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.container .card:hover .textBx{
+  transform: translateY(100%) rotateX(90deg);
+}
+.container .card .imgBx::before{
+  content:'';
+  position: absolute;
+  bottom:-70px;
+  left:50%;
+  transform: translateX(-50%);
+  width:144px;
+  height:74px;
+  background: #fff;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+  z-index:1;
+}
+
+
+.container .card .textBx::before
+
+{
+  content: '';
+  position: absolute;
+top:-8px;
+  width:160px;
+  height:80px;
+  background: #333;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+
+}
+
+
+
+.container .card .imgBx img{
+  width: 120px;
+  height:120px;
+  position: relative;
+  top: 38px;
+  z-index: 1000;
+}
+
+.container .card .textBx h2{
+  color: #222;
+  font-size: 1.25em;
+  font-weight: 500;
+  text-transform: uppercase;
+  background: #fff;
+  padding: 5px 25px;
+  box-shadow: 0 0 0 8px #333;
+}
+.container .card .content{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 25px;
+  gap: 10px;
+  transition-delay: 0s;
+  transform: 0.5s;
+  opacity: 0;
+}
+.container .card:hover .content{
+  opacity: 1;
+  transition-delay: 0.5s;
+
+}
+.container .card .content h2{
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--clr);
+}
+.container .card .content p
+{
+  text-align: center;
+  color: #fff;
+  
+}
+.container .card .content a
+{
+  color: #fff;
+  background: var(--clr);
+  padding: 10px 15px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+} */
+
+
+
+/* КНОПКА-КАРАНДАШ
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+
+}
+
+a
+{
+position: relative;
+padding: 10px 20px;
+font-size: 24px;
+color: #262626;
+text-transform: uppercase;
+font-family: sans-serif;
+text-decoration: none;
+letter-spacing: 0.1em;
+}
+
+a span{
+  position: absolute;
+
+}
+
+a span:nth-child(1),
+a span:nth-child(3)
+{
+  width:100%;
+  height:2px;
+  background: #262626;
+}
+
+a span:nth-child(1)
+{
+  top:0;
+  left:0;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+a:hover span:nth-child(1)
+{
+  transform:scaleX(1);
+  transition: 0.2s;
+  transition-delay: 0s;
+}
+
+a span:nth-child(3)
+{
+  bottom:0;
+  left:0;
+  transform-origin: right;
+  transform: scaleX(0);
+}
+
+a:hover span:nth-child(3)
+{
+  transform:scaleX(1);
+  transition: 0.2s;
+  transition-delay: 0.4s;
+}
+
+a span:nth-child(2),
+a span:nth-child(4)
+{
+  width:2px;
+  height:100%;
+  background: #262626;
+}
+
+a span:nth-child(2)
+{
+  top:0;
+  right:0;
+  transform-origin: top;
+  transform: scaleY(0);
+}
+
+a:hover span:nth-child(2)
+{
+  transform: scaleY(1);
+  transform: 0.2s;
+  transition-delay:0.2s;
+}
+
+a span:nth-child(4)
+{
+  top:0;
+  left:0;
+  transform-origin: bottom;
+  transform: scaleY(0);
+}
+
+a:hover span:nth-child(4)
+{
+  transform: scaleY(1);
+  transform: 0.2s;
+  transition-delay:0.6s;
+}
+
+a::before
+{
+  content:"";
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: #262626;
+  z-index: -1;
+  transform:scale(0);
+  transform-origin: top left;
+}
+
+a:hover::before
+{
+  transform: scale(1);
+  transition: 0.5s;
+  transition-delay: 0.8s;
+
+}
+
+a:hover{
+  color:white;
+  transition: 0.2s;
+  transition-delay: 0.8s;
+}
+
+a::after{
+  content: "\270F";
+  position: absolute;
+top:-22px;
+left: 0;
+  transform: rotate(130deg);
+  color:#262626
+}
+a:hover::after{
+  animation: draw 0.9s linear forwards;
+}
+@keyframes draw
+{
+0%{
+  top:-22px;
+  left:0;
+}
+20%
+{
+  top:-22px;
+  left:100%;
+}
+
+40%{
+  top: 22px;
+  left:100%;
+}
+60%{
+  top: 22px;
+  left:0;
+}
+
+80%
+{
+  top: -22px;
+  left:0;
+}
+100%{
+  top: 22px;
+  left:100%;
+}
+} */
+
+
+/* 3-Д ВЕРТИТСЯ КАРТОЧКА С ПАЦИЕНТОМ
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.container
+{
+  width: 100%;
+  height: 100vh;
+   background-image: url(photos/back.png); 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card
+{
+  width:90%;
+  max-width: 440px;
+  color:#fff;
+  text-align: center;
+  padding: 50px 35px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+.card img
+{
+width: 140px;
+border-radius:50%;
+}
+.card h2{
+  font-size:40px;
+  font-weight:600;
+  margin-top:20px;
+}
+
+.card p
+{
+  font-size:18px;
+  margin:10px auto;
+  max-width: 330px;
+}
+
+.card .links img{
+  width:40px;
+  border-radius:50%;
+  margin: 10px 5px;
+  transition: background 0.5s;
+}
+
+.card .links img:hover{
+  background: #ff01cf;
+}
+.btn
+{
+  text-decoration: none;
+  display: inline-block;
+  font-size:18px;
+  font-weight: 500;
+  background: #fff;
+  color: #ff01cf;
+  padding: 10px 30px;
+  border-radius: 30px;
+  margin: 30px 0 10px;
+} */
+
+*
+{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family:sans-serif;
+}
+
+:root
+{
+--clr: #083d41;
+}
+body
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--clr);
+}
+.card
+{
+  position: relative;
+  width:320px;
+  height:430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card .box
+{
+  position: relative;
+  width: 110%;
+  height:200px;
+  background: rgb(255, 255, 255);
+  border-radius: 15px;
+}
+
+.card .box:nth-child(2)
+{
+  background: white;
+  height: 220px;
+  width:100%;
+}
+
+.card .circle
+{
+position: absolute;
+width:180px;
+height:180px;
+background-color: green;
+border-radius: 50%;
+top:50%;
+left: -70px;
+transform: translateY(-50%);
+border: 10px solid var(--clr);
+}
+
+.card .box:nth-child(1)::before{
+  content: '';
+  position: absolute;
+  top:106px;
+  left:-1px;
+  width:20px;
+  height:20px;
+  background: transparent;
+z-index:10;
+border-bottom-left-radius: 20px;
+box-shadow: -6px 6px var(--clr);
+}
+
+.card .box:nth-child(1)::after{
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left:105px;
+  width:20px;
+  height:20px;
+  background: transparent;
+z-index:10;
+border-bottom-left-radius: 20px;
+box-shadow: -6px 6px var(--clr);
+}
+
+.card .box:nth-child(2)::before
+{
+  content:'';
+  position: absolute;
+  bottom:106px;
+  width:20px;
+  height:20px;
+  border-top-left-radius: 20px;
+  z-index:10;
+  left:-1px;
+  box-shadow: -6px -6px var(--clr);
+  background: transparent;
+}
+
+.card .box:nth-child(2)::after
+{
+  content:'';
+  position: absolute;
+  top:-1px;
+  width:20px;
+  height:20px;
+  border-top-left-radius: 20px;
+  z-index:10;
+  left:109px;
+  box-shadow: -6px -6px var(--clr);
+  background: transparent;
+}
+
+.card .circle .imgBx
+{
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.card .circle .imgBx img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .box .content
+{
+  position: absolute;
+  inset: 0;
+  padding: 30px 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+}
+.card .box .content h2
+{
+  width: 100%;
+  padding-left: 120px;
+  text-transform: uppercase;
+  font-size: 1.15em;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  line-height: 1.1em;
+  color:#333;
+}
+
+.card .box .content ul
+{
+  position: relative;
+  top:15px;
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  width:100%;
+  padding:0 10px;
+  justify-content: space-evenly;
+}
+
+.card .box .content ul li
+{
+  list-style:none;
+  display: flex;
+  flex-direction: column;
+  text-align:center;
+  padding: 0 10px;
+  font-size:0.85em;
+  font-weight: 500;
+  color: #999;
+}
+
+.card .box .content ul li:not(:last-child)
+{
+  border-right: 1px solid #ccc;
+}
+
+.card .box .content ul li span
+{
+  font-size: 1.65em;
+  color: #333;
+
+}
+
+.card .box .content button
+{
+  position: relative;
+  top:25px;
+
+  padding: 8px 30px;
+  border: none;
+  outline: none;
+  background: #03a9f4;
+  border-radius: 30px;
+  color:#fff;
+  font-size: 1em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+ cursor:pointer;
+ border:5px solid var(--clr);
+box-shadow: 0 0 0 10px white;
+transition: 0.5s;
+}
+.card .box .content button:hover
+{
+  
+}
